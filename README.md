@@ -1,2 +1,2 @@
-# Example
-An example greeter plugin
+# Zettlematt's Runelite plugins
+Repository for my Runelite Plugins...
