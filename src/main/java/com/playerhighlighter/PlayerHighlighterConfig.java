@@ -15,7 +15,7 @@ public interface PlayerHighlighterConfig extends Config
 	)
 	default Color outlineColor()
 	{
-		return new Color(0, 0, 255, 255);
+		return new Color(0, 0, 255, 100);
 	}
 
 	@Alpha
@@ -26,7 +26,7 @@ public interface PlayerHighlighterConfig extends Config
 	)
 	default Color selfColor()
 	{
-		return new Color(0, 255, 0, 255);
+		return new Color(0, 255, 0, 100);
 	}
 
 	@Alpha
@@ -37,7 +37,7 @@ public interface PlayerHighlighterConfig extends Config
 	)
 	default Color underfootColor()
 	{
-		return new Color(255, 0, 0, 255);
+		return new Color(255, 0, 0, 100);
 	}
 	@ConfigItem(
 			keyName = "borderWidth",
@@ -48,7 +48,7 @@ public interface PlayerHighlighterConfig extends Config
 			min=1
 	)
 
-	default int borderWidth(){return 2;}
+	default int borderWidth(){return 3;}
 
 	@ConfigItem(
 			keyName = "borderFeather",
@@ -59,7 +59,7 @@ public interface PlayerHighlighterConfig extends Config
 			min=0
 	)
 
-	default int borderFeather(){return 0;}
+	default int borderFeather(){return 5;}
 
 	@ConfigItem(
 			keyName = "highlightRadius",
