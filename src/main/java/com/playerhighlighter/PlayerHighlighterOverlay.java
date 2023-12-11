@@ -35,18 +35,26 @@ public class PlayerHighlighterOverlay extends Overlay {
 
         WorldPoint my_loc = client.getLocalPlayer().getWorldLocation();
 
+        int num_highlighted = 0;
+
         for(Player player : client.getPlayers()){
+
+            if(num_highlighted > config.highlightMaxCount())
+                break;
 
             WorldPoint player_loc = player.getWorldLocation();
             float distance = my_loc.distanceTo(player_loc);
 
             if(player != client.getLocalPlayer() && distance == 0){
+                num_highlighted++;
                 outlineRenderer.drawOutline(player, config.borderWidth(), config.underfootColor(), config.borderFeather());
                 continue;
             }
 
-            if(player != client.getLocalPlayer() && distance <= config.highlightRadius())
+            if(player != client.getLocalPlayer() && distance <= config.highlightRadius()) {
+                num_highlighted++;
                 outlineRenderer.drawOutline(player, config.borderWidth(), config.outlineColor(), config.borderFeather());
+            }
         }
 
         if(config.highlightSelf())

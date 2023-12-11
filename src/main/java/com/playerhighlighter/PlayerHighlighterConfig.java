@@ -73,6 +73,17 @@ public interface PlayerHighlighterConfig extends Config
 	default int highlightRadius(){return 3;}
 
 	@ConfigItem(
+			keyName = "highlightMaxCount",
+			name = "Max Count",
+			description = "Maximum number of players to highlight. (Reduce to decrease lag in populated areas)"
+	)
+	@Range(
+			min=10
+	)
+
+	default int highlightMaxCount(){return 100;}
+
+	@ConfigItem(
 			keyName = "highlightSelf",
 			name = "Highlight Self",
 			description = "Highlight your own player"
